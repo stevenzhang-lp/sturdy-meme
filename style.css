@@ -208,6 +208,13 @@ section {
   padding: 120px 24px;
 }
 
+@media (max-width: 768px) {
+  section {
+    padding: 80px 20px;
+    min-height: auto;
+  }
+}
+
 .section-inner {
   max-width: 980px;
   width: 100%;
@@ -217,6 +224,7 @@ section {
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   padding-top: 52px;
   position: relative;
   overflow: hidden;
@@ -428,6 +436,14 @@ section {
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .mechanism-visual {
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 48px;
+  }
+}
+
 .mech-node {
   width: 160px;
   height: 160px;
@@ -470,7 +486,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .mech-arrow-line {
@@ -480,6 +496,20 @@ section {
   border-radius: 1px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .mech-arrow {
+    flex-direction: row;
+    gap: 16px;
+  }
+  
+  .mech-arrow-line {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(180deg, var(--cyan-glow), var(--violet-glow));
+    order: -1;
+  }
 }
 
 .mech-arrow-line::after {
@@ -493,20 +523,32 @@ section {
   animation: arrowStream 2s ease-in-out infinite;
 }
 
-@keyframes arrowStream {
-  0% {
-    left: -60%;
+@media (max-width: 768px) {
+  .mech-arrow-line::after {
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: arrowStreamVertical 2s ease-in-out infinite;
   }
+}
 
-  100% {
-    left: 160%;
-  }
+@keyframes arrowStream {
+  0% { left: -60%; }
+  100% { left: 160%; }
+}
+
+@keyframes arrowStreamVertical {
+  0% { top: -60%; }
+  100% { top: 160%; }
 }
 
 .mech-arrow-label {
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--cyan-soft);
+  font-weight: 500;
 }
 
 /* ─── STATES ─── */
@@ -917,6 +959,8 @@ footer {
   top: 0.5px;
 }
 
+
+
 .footer-tagline {
   font-size: 14px;
   color: var(--ceramic-dim);
@@ -972,19 +1016,66 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  .mechanism-visual {
-    gap: 24px;
+  .nav-logo span {
+    font-size: 13px;
   }
 
-  .mech-arrow-line {
-    width: 40px;
+  .hero h1 {
+    margin-bottom: 20px;
   }
 
-  .nav-links {
-    display: none;
+  .hero-sub {
+    margin-bottom: 32px;
+    padding: 0 10px;
+  }
+
+  .widget-showcase {
+    margin-top: 60px;
+  }
+
+  .widget-frame {
+    width: 260px;
+    height: 260px;
+    border-radius: 40px;
+  }
+
+  .widget-inner-photo {
+    border-radius: 34px;
+  }
+
+  .section-headline {
+    margin-bottom: 16px;
+  }
+
+  .section-body {
+    padding: 0 10px;
+  }
+
+  .mech-node {
+    width: 140px;
+    height: 140px;
+    border-radius: 32px;
   }
 
   .polaroid {
-    width: 220px;
+    width: 260px;
+    border-radius: 40px;
+  }
+
+  .polaroid-image {
+    border-radius: 34px;
+  }
+
+  .omt-sub {
+    margin-bottom: 16px;
+  }
+
+  .footer-logo span {
+    font-size: 14px;
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    margin-bottom: 16px;
   }
 }
