@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>下载 Domin Now — 占据 TA 的主屏幕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .download-grid {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 64px;
+      flex-wrap: wrap;
+    }
+
+    /* 借用 style.css 中 state-card 的设计思路制作下载按钮 */
+    .dl-btn {
+      min-width: 220px;
+      padding: 24px 32px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--ceramic);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+
+
+    .dl-btn svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .dl-text {
+      text-align: left;
+    }
+
+    .dl-label {
+      font-size: 11px;
+      color: var(--ceramic-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .dl-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Logo">
+        <span>Domin Now</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="about.html">关于我们</a></li>
+    <li><a href="download.html">下载</a></li>
+  </ul>
+
+  <!-- 下载 Hero -->
+  <section class="hero" style="min-height: 80vh;">
+    <div class="section-inner">
+      <p class="hero-eyebrow reveal">准备好了吗？</p>
+      <h1 class="reveal reveal-delay-1">即刻传送</h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        下载 Domin Now，把你的瞬间送往 TA 的主屏幕。<br>
+        无需背景运行，即收即看。
+      </p>
+
+      <div class="download-grid reveal reveal-delay-3">
+        <!-- 静态展示按钮 -->
+        <div class="dl-btn" style="cursor: default; opacity: 0.8; border-color: rgba(255, 255, 255, 0.1);">
+          <!-- 通用下载图标: 箭头 + 托盘 -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <div class="dl-text">
+            <div class="dl-label">NOW IN</div>
+            <div class="dl-title">TestFlight 内测中</div>
+          </div>
+        </div>
+      </div>
+      
+      <p style="margin-top: 24px; color: var(--cyan-glow); font-size: 14px; font-weight: 500; letter-spacing: 0.05em; opacity: 0.9;">敬请期待</p>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Logo">
+      <span>Domin Now</span>
+    </div>
+    <p class="footer-tagline">即时传送门。</p>
+    <p class="footer-legal">诞生于虚空。© 2026 Domin Now 保留所有权利。</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 移动端菜单
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+      });
+    }
+
+
+  </script>
+
+</body>
+
+</html>

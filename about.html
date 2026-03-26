@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 — Domin Now</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Logo">
+        <span>Domin Now</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="about.html">关于我们</a></li>
+    <li><a href="download.html">下载</a></li>
+  </ul>
+
+  <!-- 关于我们 Hero -->
+  <section class="hero">
+    <div class="section-inner">
+      <p class="hero-eyebrow">我们的哲学</p>
+      <h1>连接<br>而非干扰</h1>
+      <p class="hero-sub">
+        在充满算法和点赞的世界里，我们迷失了真实。<br>
+        Domin Now 诞生于一个简单的愿望：<br>
+        让最重要的人，无意间看见你的瞬间。
+      </p>
+    </div>
+  </section>
+
+  <!-- 我们的愿景 -->
+  <section class="mechanism">
+    <div class="section-inner">
+      <p class="section-label reveal">愿景</p>
+      <h2 class="section-headline reveal reveal-delay-1">夺回你的屏幕</h2>
+      <p class="section-body reveal reveal-delay-2">
+        我们不希望你花费数小时滑动信息流。我们希望你的一天是由碎片般的、真实的瞬间组成的。
+        那是你最好的朋友正在喝的咖啡，还是你爱人窗外的夕阳。
+        没有修图，没有滤镜，只有当下。
+      </p>
+      <div class="mechanism-visual reveal reveal-delay-3" style="margin-top: 40px;">
+          <div class="ceramic-badge">
+              <div class="ceramic-badge-dot"></div>
+              <span>去中心化社交</span>
+          </div>
+          <div class="ceramic-badge">
+              <div class="ceramic-badge-dot"></div>
+              <span>隐私至上</span>
+          </div>
+          <div class="ceramic-badge">
+              <div class="ceramic-badge-dot"></div>
+              <span>拒绝算法</span>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Logo">
+      <span>Domin Now</span>
+    </div>
+    <p class="footer-tagline">即时传送门。</p>
+    <p class="footer-legal">诞生于虚空。© 2026 Domin Now 保留所有权利。</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 移动端菜单
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

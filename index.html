@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domin Now — 连接，就在此刻。</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/dseg7-classic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Logo">
+        <span>Domin Now</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="about.html">关于我们</a></li>
+    <li><a href="download.html">下载</a></li>
+  </ul>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="section-inner">
+      <p class="hero-eyebrow">隆重推出 Domin Now</p>
+      <h1>连接<br>就在此刻</h1>
+      <p class="hero-sub">
+        为你最亲密的瞬间，开启一扇私密传送门。<br>
+        直达对方主屏幕，无需任何操作。
+      </p>
+      <a href="#mechanism" class="hero-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 8 12 12 14 14" />
+        </svg>
+        了解工作原理
+      </a>
+      <div class="widget-showcase">
+        <div class="widget-frame">
+          <div class="widget-inner-photo">
+            <div class="polaroid-grain"></div>
+          </div>
+          <span class="widget-timestamp-digital">03月26日 16:21</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心机制 -->
+  <section class="mechanism" id="mechanism">
+    <div class="section-inner">
+      <p class="section-label reveal">核心逻辑</p>
+      <h2 class="section-headline reveal reveal-delay-1">超越应用的边界</h2>
+      <p class="section-body reveal reveal-delay-2">
+        你的瞬间，占据 TA 的屏幕。<br>
+        一张照片，发出的那一刻，就已经被看见。<br>
+        不需要打开，不需要点击，它就在那里。
+      </p>
+      <div class="mechanism-visual reveal reveal-delay-3">
+        <div class="mech-node sender">
+          <div class="mech-node-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="1.5"
+              stroke-linecap="round">
+              <rect x="3" y="3" width="18" height="18" rx="4" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <span class="mech-node-label">你拍下瞬间</span>
+        </div>
+        <div class="mech-arrow">
+          <div class="mech-arrow-line"></div>
+          <span class="mech-arrow-label">即时传送</span>
+        </div>
+        <div class="mech-node receiver">
+          <div class="mech-node-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--violet-glow)" stroke-width="1.5"
+              stroke-linecap="round">
+              <rect x="2" y="3" width="20" height="18" rx="4" />
+              <rect x="6" y="7" width="12" height="10" rx="2" />
+            </svg>
+          </div>
+          <span class="mech-node-label">对方即刻收到</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 两种状态 -->
+  <section class="states" id="states">
+    <div class="section-inner">
+      <p class="section-label reveal">极致交互</p>
+      <h2 class="section-headline reveal reveal-delay-1">两种模式，两种可能</h2>
+      <p class="section-body reveal reveal-delay-2">
+        针对不同的瞬间，选择最契合的传递方式。
+      </p>
+      <div class="states-grid">
+        <div class="state-card listening reveal reveal-delay-3">
+          <div class="state-indicator"></div>
+          <p class="state-mode">日常</p>
+          <h3 class="state-title">向世界打开，当下发生</h3>
+          <p class="state-body">
+            没有压力，没有倒计时。<br>
+            只是一个你想分享的瞬间。<br><br>
+            拍下此刻，发送给在意的 TA。<br>
+            轻松、自然，就像生活本身。
+          </p>
+        </div>
+        <div class="state-card void-mode reveal reveal-delay-4">
+          <div class="state-indicator"></div>
+          <p class="state-mode">催一下</p>
+          <h3 class="state-title">不是分享，是必须回应</h3>
+          <p class="state-body">
+            一旦发出，就必须回应。<br>
+            没有跳过，没有已读不回。<br><br>
+            你只能用一张照片，给出答案。<br>
+            时间在流逝，关系在此刻被验证。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 还有一件事 -->
+  <section class="one-more-thing" id="echo">
+    <div class="section-inner">
+      <p class="omt-pre reveal">还有一件事</p>
+      <h2 class="omt-headline reveal reveal-delay-1">回响模式</h2>
+      <p class="omt-sub reveal reveal-delay-2">两段人生，一幅杰作</p>
+      <p class="section-body reveal reveal-delay-3">
+        协作式创造。通过实时双重曝光，将你的瞬间与 TA 的瞬间融为一体。
+        一个共同的视界，诞生于两个截然不同的世界。
+      </p>
+      <div class="echo-visual reveal reveal-delay-3">
+        <div class="echo-circle"></div>
+        <div class="echo-circle"></div>
+        <div class="echo-circle"></div>
+        <div class="echo-core"></div>
+      </div>
+      <div class="coming-soon reveal reveal-delay-4">即将推出</div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Logo">
+      <span>Domin Now</span>
+    </div>
+    <p class="footer-tagline">即时传送门。</p>
+    <p class="footer-legal">诞生于虚空。© 2026 Domin Now 保留所有权利。</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 移动端菜单
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        });
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
