@@ -36,13 +36,13 @@
   <!-- 首屏 -->
   <section class="hero">
     <div class="section-inner">
-      <p class="hero-eyebrow">隆重推出 Domin Now</p>
-      <h1>连接<br>就在此刻</h1>
-      <p class="hero-sub">
+      <p class="hero-eyebrow reveal">隆重推出 Domin Now</p>
+      <h1 class="reveal reveal-delay-1">连接<br>就在此刻</h1>
+      <p class="hero-sub reveal reveal-delay-2">
         为你最亲密的瞬间，开启一扇私密传送门。<br>
         直达对方主屏幕，无需任何操作。
       </p>
-      <a href="#mechanism" class="hero-cta">
+      <a href="#mechanism" class="hero-cta reveal reveal-delay-3">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
           stroke-linejoin="round">
           <circle cx="12" cy="12" r="10" />
@@ -50,7 +50,7 @@
         </svg>
         了解工作原理
       </a>
-      <div class="widget-showcase">
+      <div class="widget-showcase reveal reveal-delay-4">
         <div class="widget-frame">
           <div class="widget-inner-photo">
             <div class="polaroid-grain"></div>
@@ -170,11 +170,13 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));

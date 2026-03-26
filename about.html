@@ -34,9 +34,9 @@
   <!-- 关于我们 Hero -->
   <section class="hero">
     <div class="section-inner">
-      <p class="hero-eyebrow">我们的哲学</p>
-      <h1>连接<br>而非干扰</h1>
-      <p class="hero-sub">
+      <p class="hero-eyebrow reveal">我们的哲学</p>
+      <h1 class="reveal reveal-delay-1">连接<br>而非干扰</h1>
+      <p class="hero-sub reveal reveal-delay-2">
         在充满算法和点赞的世界里，我们迷失了真实。<br>
         Domin Now 诞生于一个简单的愿望：<br>
         让最重要的人，无意间看见你的瞬间。
@@ -86,11 +86,13 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
